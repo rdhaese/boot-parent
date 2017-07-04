@@ -22,6 +22,15 @@
     <!--Packaging-->
     <packaging>pom</packaging>
 
+    <!--Organization-->
+    <organization>
+        <name>Robin D'Haese Imaginary Inc.</name>
+        <url>${github.profileUrl}</url>
+    </organization>
+
+    <!--TODO decide on license-->
+    <licenses/>
+
     <!--Developed By-->
     <developers>
         <developer>
