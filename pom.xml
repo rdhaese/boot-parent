@@ -4,9 +4,107 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--Spring Boot parent POM-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+    </parent>
+
+    <!--Module info-->
     <groupId>com.rdhaese</groupId>
     <artifactId>boot-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--Extra Module Info-->
+    <name>rdhaese Boot Parent</name>
+    <description>Personal starter pom for spring boot projects.</description>
+    <url>${github.projectUrl}</url>
 
+    <!--Packaging-->
+    <packaging>pom</packaging>
+
+    <!--Developed By-->
+    <developers>
+        <developer>
+            <email>${email}</email>
+            <name>${firstName} ${lastName}</name>
+            <url>${github.profileUrl}</url>
+            <id>${defaultUsername}</id>
+        </developer>
+    </developers>
+
+    <!--Issues can be found on github-->
+    <issueManagement>
+        <url>${github.projectUrl}/issues</url>
+        <system>GitHub Issues</system>
+    </issueManagement>
+
+    <!-- Source code management info-->
+    <scm>
+        <url>${github.projectUrl}</url>
+        <connection>scm:git:git://github.com/${github.username}/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:${github.username}/${project.artifactId}.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <!--TODO when nexus is set up
+    <distributionManagement></distributionManagement>-->
+
+    <!--Module properties-->
+    <properties>
+        <!--Encoding type-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--Personal info-->
+        <firstName>Robin</firstName>
+        <lastName>D'Haese</lastName>
+        <email>r.dhaese92@gmail.com</email>
+        <defaultUsername>rdhaese</defaultUsername>
+
+        <!--Docker properties-->
+        <docker.username>${defaultUsername}</docker.username>
+        <docker.repository>https://hub.docker.com/r/</docker.repository>
+        <docker.serverId>docker-hub</docker.serverId>
+
+        <!--Github properties-->
+        <github.username>${defaultUsername}</github.username>
+        <github.profileUrl>https://github.com/${github.username}</github.profileUrl>
+        <github.projectUrl>${github.profileUrl}/${project.artifactId}</github.projectUrl>
+
+        <!--Plugin versions-->
+        <org.apache.maven.plugin.maven-release-plugin.version>2.5.3</org.apache.maven.plugin.maven-release-plugin.version>
+
+        <!--Plugin Dependency versions-->
+        <org.springframework.springloaded.version>1.2.6.RELEASE</org.springframework.springloaded.version>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--Spring boot plugin (dev utils pre-configured, if needed in a module, only groupid and artifact id are necessary-->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <dependencies>
+                        <!--Dev utils-->
+                        <dependency>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>springloaded</artifactId>
+                            <version>${org.springframework.springloaded.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <!--Release plugin (every module now has this by default-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${org.apache.maven.plugin.maven-release-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
