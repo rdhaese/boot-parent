@@ -1,0 +1,5 @@
+"Boot Parent -  D'Haese Robin"
+===========================================================
+Project I use as parent pom for hobby projects.
+Defines some properties, the maven-release-plugin and the config of the spring-boot-plugin.
+Uses spring boot as parent pom.
