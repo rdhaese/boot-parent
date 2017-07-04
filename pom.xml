@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!--Spring Boot parent POM-->
@@ -79,7 +80,8 @@
         <github.projectUrl>${github.profileUrl}/${project.artifactId}</github.projectUrl>
 
         <!--Plugin versions-->
-        <org.apache.maven.plugin.maven-release-plugin.version>2.5.3</org.apache.maven.plugin.maven-release-plugin.version>
+        <org.apache.maven.plugin.maven-release-plugin.version>2.5.3
+        </org.apache.maven.plugin.maven-release-plugin.version>
 
         <!--Plugin Dependency versions-->
         <org.springframework.springloaded.version>1.2.6.RELEASE</org.springframework.springloaded.version>
