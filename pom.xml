@@ -55,14 +55,36 @@
         <tag>boot-parent-1.0.1</tag>
     </scm>
 
-    <!--TODO when nexus is set up
-    <distributionManagement></distributionManagement>-->
+    <!--Where distributions (build jar/war are pushed to, nexus)-->
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://192.168.99.100:8081/repository/rdhaese/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+        <!--Snapshot versions have their own repository-->
+        <snapshotRepository>
+            <id>nexus-snapshot</id>
+            <url>http://192.168.99.100:8081/repository/rdhaese-snapshot/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
-    <!--Enable using github repositories as dependencies-->
     <repositories>
+        <!--Enable using github repositories as dependencies-->
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
+        </repository>
+        <!--Get from own nexus-->
+        <repository>
+            <id>${defaultUsername}</id>
+            <url>http://192.168.99.100:8081/repository/rdhaese/</url>
+        </repository>
+        <!--Also snapshots-->
+        <repository>
+            <id>${defaultUsername}-snapshot</id>
+            <url>http://192.168.99.100:8081/repository/rdhaese-snapshot/</url>
         </repository>
     </repositories>
 
