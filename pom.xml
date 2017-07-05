@@ -119,14 +119,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
                 <!--Spring boot plugin (dev utils pre-configured, if needed in a module, only groupid and artifact id are necessary-->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
@@ -144,6 +136,15 @@
         </pluginManagement>
 
         <plugins>
+            <!--JDK8 required ;)-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             <!--Release plugin (every module now has this by default)-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
