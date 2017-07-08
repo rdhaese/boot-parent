@@ -111,8 +111,8 @@
 
         <!--Dependency versions-->
         <org.apache.commons.commons-lang3.version>3.6</org.apache.commons.commons-lang3.version>
-        <com.rdhaese.commons.mapstruct.version>1.0.3</com.rdhaese.commons.mapstruct.version>
-        <com.rdhaese.commons.utils.version>1.0.1</com.rdhaese.commons.utils.version>
+        <com.rdhaese.commons.mapstruct.version>1.0.4</com.rdhaese.commons.mapstruct.version>
+        <com.rdhaese.commons.utils.version>1.0.2</com.rdhaese.commons.utils.version>
 
         <!--Plugin versions-->
         <org.apache.maven.plugin.maven-release-plugin.version>2.5.3</org.apache.maven.plugin.maven-release-plugin.version>
