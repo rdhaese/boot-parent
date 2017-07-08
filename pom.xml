@@ -111,6 +111,8 @@
 
         <!--Dependency versions-->
         <org.apache.commons.commons-lang3.version>3.6</org.apache.commons.commons-lang3.version>
+        <com.rdhaese.commons.mapstruct.version>1.0.3</com.rdhaese.commons.mapstruct.version>
+        <com.rdhaese.commons.utils.version>1.0.1</com.rdhaese.commons.utils.version>
 
         <!--Plugin versions-->
         <org.apache.maven.plugin.maven-release-plugin.version>2.5.3</org.apache.maven.plugin.maven-release-plugin.version>
@@ -125,6 +127,16 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${org.apache.commons.commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rdhaese.commons</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${com.rdhaese.commons.mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rdhaese.commons</groupId>
+                <artifactId>utils</artifactId>
+                <version>${com.rdhaese.commons.utils.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
