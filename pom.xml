@@ -12,7 +12,7 @@
     <!--Module info-->
     <groupId>com.rdhaese</groupId>
     <artifactId>boot-parent</artifactId>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.9</version>
 
     <!--Extra Module Info-->
     <name>rdhaese Boot Parent</name>
@@ -52,7 +52,7 @@
         <url>${github.projectUrl}</url>
         <connection>scm:git:git://github.com/${github.username}/${project.artifactId}.git</connection>
         <developerConnection>scm:git:git@github.com:${github.username}/${project.artifactId}.git</developerConnection>
-        <tag>boot-parent-1.0.1</tag>
+        <tag>boot-parent-1.0.9</tag>
     </scm>
 
     <!--Where distributions (build jar/war are pushed to, nexus)-->
