@@ -12,7 +12,7 @@
     <!--Module info-->
     <groupId>com.rdhaese</groupId>
     <artifactId>boot-parent</artifactId>
-    <version>1.0.9</version>
+    <version>1.0.10-SNAPSHOT</version>
 
     <!--Extra Module Info-->
     <name>rdhaese Boot Parent</name>
