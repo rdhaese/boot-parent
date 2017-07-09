@@ -59,15 +59,9 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://192.168.99.100:8081/repository/rdhaese/</url>
+            <url>http://192.168.99.100:8081/repository/rdhaese-mixed/</url>
             <uniqueVersion>true</uniqueVersion>
         </repository>
-        <!--Snapshot versions have their own repository-->
-        <snapshotRepository>
-            <id>nexus-snapshot</id>
-            <url>http://192.168.99.100:8081/repository/rdhaese-snapshot/</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
     </distributionManagement>
 
     <repositories>
@@ -132,6 +126,7 @@
                 <groupId>com.rdhaese.commons</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${com.rdhaese.commons.mapstruct.version}</version>
+                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>com.rdhaese.commons</groupId>
