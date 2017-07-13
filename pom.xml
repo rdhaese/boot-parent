@@ -108,31 +108,72 @@
         <org.apache.commons.commons-lang3.version>3.6</org.apache.commons.commons-lang3.version>
         <com.rdhaese.commons.mapstruct.version>1.0.4</com.rdhaese.commons.mapstruct.version>
         <com.rdhaese.commons.utils.version>1.0.3</com.rdhaese.commons.utils.version>
+        <!--Test dependency versions-->
+        <org.dbunit.dbunit.version>2.5.3</org.dbunit.dbunit.version>
+        <com.github.springtestdbunit.spring-test-dbunit.version>1.3.0</com.github.springtestdbunit.spring-test-dbunit.version>
+        <org.easymock.easymock.version>3.4</org.easymock.easymock.version>
+        <org.springframework.ws.spring-ws-test.version>2.4.0-RELEASE</org.springframework.ws.spring-ws-test.version>
 
         <!--Plugin versions-->
         <org.apache.maven.plugin.maven-release-plugin.version>2.5.3</org.apache.maven.plugin.maven-release-plugin.version>
 
         <!--Plugin Dependency versions-->
         <org.springframework.springloaded.version>1.2.6.RELEASE</org.springframework.springloaded.version>
+
+        <!-- Compiler source and target version-->
+        <maven-compiler-plugin.source.version>1.8</maven-compiler-plugin.source.version>
+        <maven-compiler-plugin.target.version>1.8</maven-compiler-plugin.target.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-lang3</artifactId>
-                <version>${org.apache.commons.commons-lang3.version}</version>
-            </dependency>
+            <!-- Utility: Personal mapstruct 'extension' -->
             <dependency>
                 <groupId>com.rdhaese.commons</groupId>
                 <artifactId>mapstruct</artifactId>
                 <version>${com.rdhaese.commons.mapstruct.version}</version>
                 <optional>true</optional>
             </dependency>
+            <!-- Utility: Personal utilities -->
             <dependency>
                 <groupId>com.rdhaese.commons</groupId>
                 <artifactId>utils</artifactId>
                 <version>${com.rdhaese.commons.utils.version}</version>
+            </dependency>
+            <!-- Utility: Apache commons -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${org.apache.commons.commons-lang3.version}</version>
+            </dependency>
+
+            <!-- Test: cool library that integrates spring and dbunit-->
+            <dependency>
+                <groupId>com.github.springtestdbunit</groupId>
+                <artifactId>spring-test-dbunit</artifactId>
+                <version>${com.github.springtestdbunit.spring-test-dbunit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Test: dbunit -->
+            <dependency>
+                <groupId>org.dbunit</groupId>
+                <artifactId>dbunit</artifactId>
+                <version>${org.dbunit.dbunit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Test: easymock; if not in the mood for mockito-->
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>${org.easymock.easymock.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--Test: spring-ws-test -->
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-ws-test</artifactId>
+                <version>${org.springframework.ws.spring-ws-test.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -157,13 +198,12 @@
         </pluginManagement>
 
         <plugins>
-            <!--JDK8 required ;)-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven-compiler-plugin.source.version}</source>
+                    <target>${maven-compiler-plugin.target.version}</target>
                 </configuration>
             </plugin>
             <!--Release plugin (every module now has this by default)-->
